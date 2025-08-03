@@ -1,0 +1,712 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.center-title {
+    text-align: center;
+    font-size: 52px;
+}
+.center-title::after {
+    display: block;
+    margin: 25px auto 0;
+    content: "";
+    width: 70px;
+    height: 2px;
+    background-color: #007bff;  
+    margin-bottom: 20px;
+}
+#background {
+    height: 100000vh;
+    width: 10000vh;
+    position: fixed;
+    z-index: -100;
+    opacity: 0.9
+}
+body {
+    font-family: "Inconsolata", monospace;
+    color: #080808;
+}
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.left-title {
+    font-size: 52px;
+}
+.section-title::after {
+    display: block;
+    margin-top: 25px;
+    content: "";
+    width: 30%;
+    height: 2px;
+    background-color: #007bff; 
+  margin-bottom: 30px;
+}
+.section-text {
+    margin-top: 20px;
+    line-height: 140%;
+    font-size: 18px;
+}
+button {
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+img {
+    display: block;
+    max-height: 100%;
+    max-width: 100%;
+}
+ul li {
+    list-style-type: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+#header {
+    padding: 20px 0;
+    background-color: rgba(255, 255, 255, 0.59);
+    box-shadow: 0 15px 10px rgba(0, 0, 0, 0.12);
+}
+.header-wrap {
+    display: flex;
+    justify-content: space-between;
+}
+.header-left {
+    align-items: center;
+    display: flex;
+}
+.header-logo img {
+    width: 100px;
+    border-radius: 20px;
+}
+.header-title {
+    font-weight: 700;
+    font-size: 85px;
+    margin-left: 30px;
+}
+.header-right {
+    display: block;
+    font-size: 30px;
+    line-height: 160%;
+    letter-spacing: 3px;
+}
+.header-link:hover {
+    color: #007bff;
+}
+.header-right-top {
+    text-align: center;
+}
+.header-right-button {
+    letter-spacing: 1px; 
+}
+#banner-section {
+    padding: 150px 0 300px;
+}
+.banner-title {
+    font-size: 60px;
+    letter-spacing: 5px;
+}
+.banner-text {
+    margin-top: 40px;
+    font-size: 22px;
+    letter-spacing: 3px;
+    line-height: 140%;
+}
+#cube-canvas {
+  position: absolute;
+  top: 100px;
+  left: 300px;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+#products-section {
+    padding: 40px 0;
+}
+.products {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  transition: max-height 0.6s ease;
+}
+#about-section {
+    padding: 20px 0;
+}
+.about-right{
+    width: 100%;
+}
+.about-wrap {
+    display:flex;
+    justify-content: space-between;
+}
+.about-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 30px;
+    border: 1px solid #000000;
+}
+.about-btn:hover {
+    background-color: #007bff;
+    border:  #007bff;
+    color: #fff;
+}
+#about-section .section-text{
+    letter-spacing: 5px;
+    font-weight: 800;
+}
+.products.show-all {
+  flex-wrap: wrap;
+}
+
+.product {
+  background: #f8f8f8;
+  width: 400px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.12);
+  border-radius: 18px;
+  overflow: hidden;
+  cursor: default;
+  position: relative;
+  box-sizing: border-box;
+  transition: background 0.3s ease;
+}
+
+.product img {
+    box-shadow: 0 10px 5px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.product h3,
+.product p {
+  margin: 6px 10px;
+  word-wrap: break-word;
+}
+
+.product h3 {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.product p {
+  font-size: 18px;
+  line-height: 1.3;
+  max-width: calc(100% - 20px);
+  max-height: none;
+}
+
+.product.deletable {
+  background: rgba(0, 0, 0, 0.07);
+}
+
+.product.deletable:hover {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.product.deletable:hover .trash-icon {
+  display: block;
+}
+
+#show-more-wrapper {
+  text-align: center;
+  margin: 10px 0 30px 0;
+}
+
+#show-more {
+  background-color: #007bff;
+  border: none;
+  color: white;
+  padding: 10px 24px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#show-more:hover {
+  background-color: #0056b3;
+}
+
+/* Панель добавления товара справа */
+.add-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 50vw;
+  max-width: 600px;
+background: #fffefeed;
+  box-shadow: -2px 0 10px rgba(0,0,0,0.25);
+  padding: 20px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-sizing: border-box;
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 10;
+}
+
+.add-panel.slide-in {
+  transform: translateX(0);
+}
+
+.close-button {
+  align-self: flex-end;
+  background: transparent;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #333;
+  padding: 0;
+  margin: 0;
+}
+
+input, textarea {
+  font-size: 15px;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 100%;
+  box-sizing: border-box;
+  resize: none;
+  font-family: inherit;
+  transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+button#submit-product, button.delete-mode-button {
+  background-color: #007bff;
+  border: none;
+  color: white;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+button#submit-product:hover, button.delete-mode-button:hover {
+  background-color: #0056b3;
+}
+
+/* Модальное окно для увеличения изображения */
+
+.modal-overlay {
+  position: fixed;
+  top:0; left:0; right:0; bottom:0;
+  background: rgba(0,0,0,0.75);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1500;
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+.modal-content {
+  max-width: 90vw;
+  max-height: 90vh;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 30px rgba(0,0,0,0.5);
+  background: #fff;
+}
+
+.modal-content img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 90vh;
+}
+
+.modal-close {
+  position: absolute;
+  top: 6px;
+  right: 10px;
+  font-size: 30px;
+  cursor: pointer;
+  color: #333;
+  background: transparent;
+  border: none;
+  user-select: none;
+}
+/* ... остальной CSS из предыдущего ответа ... */
+
+.product.deletable {
+  position: relative;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  user-select: none;
+}
+
+.product.deletable:hover {
+  background: rgba(192, 57, 43, 0.9);
+  color: white;
+}
+
+.product.deletable:hover img,
+.product.deletable:hover h3,
+.product.deletable:hover p {
+  opacity: 0.2;
+  transition: opacity 0.3s ease;
+}
+
+.trash-icon-large {
+  font-size: 48px;
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  transform: translate(-40%, -40%);
+  color: red;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.product.deletable:hover .trash-icon-large {
+  display: block;
+}
+
+/* Плавное открытие/закрытие панели */
+.add-panel {
+  /* осталось из предыдущего ответа */
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Класс для скрытия панели с анимацией */
+.add-panel.slide-out {
+  transform: translateX(100%);
+}
+#contact-section {
+  background-color: rgba(255, 255, 255, 0.41);
+}
+.contact-wrap {
+  display:flex;
+}
+.contact-left {
+  padding: 30px 40px;
+  border-right: solid 2px #007bff;
+}
+.contact-right {
+  padding: 30px 40px;
+}
+.contact-info {
+  display: flex;
+  gap: 90px;
+  align-items: center;
+}
+.contact-info-right img {
+  width: 170px;
+  border-radius: 30px;
+}
+.contact-wrap b {
+  display: block;
+  margin: 30px 0 30px;
+  font-size: 30px;
+}
+.contact-wrap a {
+  font-size: 40px;
+}
+.contact-wrap a:hover {
+  color: #007bff;
+}
+#footer {
+  background: url(footer-background.jpg) center no-repeat;
+  background-size: cover;
+  padding: 30px 0;
+  text-align: center;
+}
+#footer .center-title {
+  color: white;
+}
+#footer ul {
+  display:flex;
+  justify-content: space-evenly;
+  color: white;
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+#footer ul li:hover {
+  color: #007bff;
+}
+.footer-copyright {
+  padding-top: 20px;
+  border-top: solid 2px #007bff;
+  font-size: 20px;
+  color: #ffffff;
+}
+/* ==================== МЕДИАЗАПРОСЫ ==================== */
+
+/* Большие планшеты и маленькие ноутбуки (1024px и меньше) */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 20px;
+  }
+  
+  .header-title {
+    font-size: 70px;
+  }
+  
+  #cube-canvas {
+    left: 200px;
+  }
+  
+  .product {
+    width: 350px;
+  }
+  
+  .contact-info {
+    gap: 40px;
+  }
+}
+
+/* Планшеты (768px и меньше) */
+@media (max-width: 768px) {
+  .header-wrap {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .header-title {
+    margin-left: 0;
+    margin-top: 15px;
+    font-size: 60px;
+  }
+  
+  .header-right {
+    margin-top: 20px;
+    font-size: 24px;
+  }
+  
+  .banner-wrap, 
+  .about-wrap,
+  .contact-wrap {
+    flex-direction: column;
+  }
+  
+  #cube-canvas {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-top: 40px;
+    height: 300px;
+  }
+  
+  .about-right img {
+    margin: 30px auto 0;
+    max-width: 80%;
+  }
+  
+  .products {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .product {
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .contact-left {
+    border-right: none;
+    border-bottom: solid 2px #007bff;
+    padding-bottom: 40px;
+  }
+  
+  .contact-right {
+    padding-top: 40px;
+  }
+  
+  .contact-info {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+  
+  .add-panel {
+    width: 80vw;
+  }
+  
+  .modal-content {
+    max-width: 95vw;
+  }
+}
+
+/* Большие телефоны (576px и меньше) */
+@media (max-width: 576px) {
+  .header-title {
+    font-size: 48px;
+  }
+  
+  .header-logo img {
+    width: 80px;
+  }
+  
+  .header-right {
+    font-size: 20px;
+  }
+  
+  .banner-title {
+    font-size: 40px;
+  }
+  
+  .banner-text {
+    font-size: 18px;
+  }
+  
+  .left-title,
+  .center-title {
+    font-size: 36px;
+  }
+  
+  .section-text {
+    font-size: 16px;
+  }
+  
+  .contact-wrap a {
+    font-size: 28px;
+  }
+  
+  .contact-wrap b {
+    font-size: 24px;
+  }
+  
+  #footer ul {
+    flex-direction: column;
+    gap: 15px;
+    font-size: 22px;
+  }
+  
+  .add-panel {
+    width: 100vw;
+    padding: 20px;
+  }
+  
+  input, textarea {
+    font-size: 14px;
+    padding: 8px;
+  }
+  
+  button#submit-product, 
+  button.delete-mode-button {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+/* Маленькие телефоны (400px и меньше) */
+@media (max-width: 400px) {
+  .header-title {
+    font-size: 36px;
+  }
+  
+  .header-logo img {
+    width: 60px;
+  }
+  
+  .header-right {
+    font-size: 18px;
+  }
+  
+  .banner-section {
+    padding: 100px 0 200px;
+  }
+  
+  .banner-title {
+    font-size: 32px;
+  }
+  
+  .banner-text {
+    font-size: 16px;
+  }
+  
+  .left-title,
+  .center-title {
+    font-size: 28px;
+  }
+  
+  .contact-wrap a {
+    font-size: 22px;
+  }
+  
+  .contact-info-right img {
+    width: 120px;
+  }
+  
+  .product h3 {
+    font-size: 20px;
+  }
+  
+  .product p {
+    font-size: 16px;
+  }
+  
+  .modal-close {
+    font-size: 24px;
+  }
+}
+
+/* Ориентация landscape для мобильных устройств */
+@media (max-height: 500px) and (orientation: landscape) {
+  #header {
+    padding: 10px 0;
+  }
+  
+  .header-logo img {
+    width: 50px;
+  }
+  
+  .header-title {
+    font-size: 30px;
+    margin-left: 15px;
+  }
+  
+  .header-right {
+    font-size: 16px;
+    line-height: 120%;
+  }
+  
+  .banner-section {
+    padding: 50px 0 100px;
+  }
+  
+  #cube-canvas {
+    height: 200px;
+  }
+  
+  .about-btn {
+    padding: 8px 16px;
+    font-size: 16px;
+  }
+}

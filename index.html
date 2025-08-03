@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>3D Магазин</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="style.css" />
+      <script src="script.js" defer></script>
+      <script src="https://cdn.jsdelivr.net/npm/three@0.149.0/build/three.min.js"></script>
+        <link rel="icon" type="icon" href="logo.png">
+    </head>
+    <body>
+      <img src="background.jpg" id="background">
+       <header id="header">
+           <div class="container">
+               <div class="header-wrap">
+                   <div class="header-left">
+                       <div class="header-logo">
+                           <img src="logo.png">
+                       </div>
+                       <h1 class="header-title">3D/Shop</h1>
+                   </div>
+                   <div class="header-right">
+                       <div class="header-right-top">
+                           <a class="header-link" href="#products-section">Товары</a>
+                       </div>
+                       <div class="header-right-button">
+                           <a class="header-link" href="#banner-section">Главная</a>
+                           <a class="header-link" href="#about-section">О нас</a>
+                           <a class="header-link" href="#contact-section">Контакты</a>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </header>
+        <main>
+         <section id="banner-section">
+             <div class="container">
+                 <div class="banner-wrap">
+                     <div class="banner-left">
+                         <h2 class="banner-title">Привет!</h2>
+                         <p class="banner-text">Здесь вы сможете получить о чём мечтали!<br>Дa и по выгодной цене!</p>
+                     </div>
+                     <div class="banner-right">
+                         <canvas id="cube-canvas"></canvas>
+                     </div>
+                 </div>
+             </div>
+         </section>
+         <section id="about-section">
+             <div class="container">
+                 <div class="about-wrap">
+                     <div class="about-left">
+                         <h2 class="section-title">О нас</h2>
+                         <p class="section-text">У нас есть опыт работы 2 года.<br>К томуже у нас есть 2 принтора.<br>На картинке один из них.<br>За определённую денежку можем сделать кастамный заказ.</p>
+                         <a href="https://wa.me/358452389906" target="_blank"><button class="about-btn">Написать нам</button></a>
+                     </div>
+                     <div class="about-right">
+                         <img src="bambu-lab.png">
+                     </div>
+                 </div>
+             </div>
+         </section>
+         <section id="products-section">
+             <div class="container">
+                 <h2 class="center-title">Товары</h2>
+                  <div id="product-container" class="products"></div>
+                  <div id="add-panel" class="add-panel hidden">
+                    <button id="close-panel" class="close-button">✕</button>
+                    <h2>Добавить товар</h2>
+                    <input type="text" id="title" placeholder="Название" maxlength="50" required />
+                    <textarea id="description" placeholder="Описание (до 50 символов)" maxlength="50" required></textarea>
+                    <input type="text" id="price" placeholder="Цена" required />
+                    <input type="text" id="contact" placeholder="Контакты" required />
+                    <input type="text" id="imageUrl" placeholder="Ссылка на изображение" required />
+                    <button id="submit-product">Отправить</button>
+                    <button id="activate-delete" class="delete-mode-button">Удалить старый товар</button>
+                  </div>
+                  <button id="open-panel" class="hidden"></button>
+                  <div id="show-more-wrapper">
+                    <button id="show-more">Показать всё</button>
+                  </div>
+             </div>
+        </section>
+        <section id="contact-section">
+            <div class="container">
+                <div class="contact-wrap">
+                    <div class="contact-left">
+                        <h2 class="section-title">Contact</h2>
+                        <a class="contact-link" href="https://wa.me/358452389906" target="_blank">Связь по Watsapp</a>
+                    </div>
+                    <div class="contact-right">
+                        <div class="contact-info">
+                            <div class="contact-info-left">
+                                <h2 class="section-title">Author</h2>
+                                <p class="section-text">Ivan Serebertsev</p>
+                            </div>
+                            <div class="contact-info-right">
+                                <img src="logo.png">
+                            </div>
+                        </div>
+                        <b>Linki pääsivuston</b>
+                        <a class="contact-link-paa" href="file:///C:/Users/Vanja/Desktop/IT-van/index.html" target="_blank">IT-van.GitHub.io</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        </main>
+        <footer id="footer">
+            <div class="container">
+                <h2 class="center-title">3D/Shop</h2>
+                <ul>
+                    <li>
+                        <a class="footer-link" href="#banner-section">Главная</a>
+                    </li>
+                    <li>
+                        <a class="footer-link" href="#about-section">О нас</a>
+                    </li>
+                    <li>
+                        <a class="footer-link" href="#products-section">Товары</a>
+                    </li>
+                    <li>
+                        <a class="footer-link" href="#contact-section">Контакты</a>
+                    </li>
+                </ul>
+                <div class="footer-copyright">
+                    <b class="copyright">© И. Д. Серебертсев, 2025 г.</b>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
